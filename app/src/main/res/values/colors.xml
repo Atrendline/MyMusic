@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#455A64</color>
+    <color name="primary_dark_color">#F50057</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="chart">#80F50057</color>
+    <color name="dance">#80379237</color>
+    <color name="rock">#808800A0</color>
+    <color name="latin_beats">#8016AFCA</color>
+</resources>

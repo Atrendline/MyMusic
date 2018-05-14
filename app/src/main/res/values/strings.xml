@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Music</string>
+    <string name="chart">#CHART</string>
+    <string name="dance">#DANCE</string>
+    <string name="rock">#ROCK</string>
+    <string name="latin_beats">#LATIN BEATS</string>
+    <string name="track">Currently playing</string>
+    <string name="title">FRIENDS</string>
+    <string name="artist">Justin Bieber and Bloodpop</string>
+</resources>
