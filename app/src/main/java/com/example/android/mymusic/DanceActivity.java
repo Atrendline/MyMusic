@@ -10,16 +10,18 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class DanceActivity extends AppCompatActivity {
-    public static String artist = "";
-    public static String song = "";
+    public String artist;
+    public String track;
+
+
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_play );
+        setContentView( R.layout.track_list );
 
-        ArrayList<Track> tracks = new ArrayList<Track>();
+        final ArrayList<Track> tracks = new ArrayList<Track>();
         tracks.add( new Track( "DJ Snake and Alunageorge ", "YOU KNOW YOU LIKE" ) );
         tracks.add( new Track( "Tujamo", "BOOTY BOUNCE" ) );
         tracks.add( new Track( "Jax Jones", "BREATHE" ) );
@@ -31,7 +33,7 @@ public class DanceActivity extends AppCompatActivity {
         tracks.add( new Track( "Bakermat", "ONE DAY" ) );
         tracks.add( new Track( "99 Souls", "THE GIRL IS MINE" ) );
 
-        TrackAdapter adapter = new TrackAdapter( this, tracks );
+        final TrackAdapter adapter = new TrackAdapter( this, tracks );
 
         ListView listView = (ListView) findViewById( R.id.list );
 
@@ -42,7 +44,8 @@ public class DanceActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent( DanceActivity.this, PlayActivity.class );
                 intent.putExtra( "artistName", artist );
-                intent.putExtra( "songName", song );
+                intent.putExtra( "songName", track );
+                startActivity( intent );
             }
         } );
     }

@@ -8,12 +8,11 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical" />
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
     <TextView
-        android:id="@+id/song_text_view"
+        android:id="@+id/artist_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -21,7 +20,7 @@
         tools:text="@string/track" />
 
     <TextView
-        android:id="@+id/artist_text_view"
+        android:id="@+id/song_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/song_text_view"
@@ -32,7 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="20dp">
 
         <ImageView
             android:id="@+id/previous_button"
@@ -40,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_weight="1"
+            android:clickable="true"
             android:src="@drawable/previous_black" />
 
         <ImageView
@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_weight="1"
+            android:clickable="true"
             android:src="@drawable/play_black" />
 
         <ImageView
@@ -56,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_weight="1"
+            android:clickable="true"
             android:src="@drawable/next_black" />
     </LinearLayout>
 

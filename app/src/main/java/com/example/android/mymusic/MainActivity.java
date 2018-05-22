@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
+
         TextView dance = (TextView) findViewById( R.id.dance );
 
         dance.setOnClickListener( new View.OnClickListener() {

@@ -18,8 +18,5 @@ public class Track {
         return songName;
     }
 
-    public String getCurrentTrack() {
-        return currentTrack;
-    }
 }
 

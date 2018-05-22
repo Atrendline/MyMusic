@@ -10,16 +10,17 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class Latin_BeatsActivity extends AppCompatActivity {
-    public static String artist = "";
-    public static String song = "";
+    public String artist;
+    public String track;
+
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_play );
+        setContentView( R.layout.track_list );
 
-        ArrayList<Track> tracks = new ArrayList<Track>();
+        final ArrayList<Track> tracks = new ArrayList<Track>();
         tracks.add( new Track( "D.OZI feat J Alvarez", "SI TU NO ESTAS" ) );
         tracks.add( new Track( "Wisin and Yandel", "HIPNOTIZAME" ) );
         tracks.add( new Track( "Cosculluela feat Daddy Yankee", "A DONDE VOY" ) );
@@ -31,7 +32,7 @@ public class Latin_BeatsActivity extends AppCompatActivity {
         tracks.add( new Track( "Angel Lopez", "HAST CUANDO" ) );
         tracks.add( new Track( "Luis Fonsi/Demi Lovato", "ÉCHAME LA CULPA" ) );
 
-        TrackAdapter adapter = new TrackAdapter( this, tracks );
+        final TrackAdapter adapter = new TrackAdapter( this, tracks );
 
         ListView listView = (ListView) findViewById( R.id.list );
 
@@ -42,9 +43,11 @@ public class Latin_BeatsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent( Latin_BeatsActivity.this, PlayActivity.class );
                 intent.putExtra( "artistName", artist );
-                intent.putExtra( "songName", song );
+                intent.putExtra( "songName", track );
+                startActivity( intent );
             }
         } );
+
     }
 }
 

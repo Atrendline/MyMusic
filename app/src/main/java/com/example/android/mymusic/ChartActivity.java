@@ -10,15 +10,16 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class ChartActivity extends AppCompatActivity {
-    public static String artist = "";
-    public static String song = "";
+    public String artist;
+    public String track;
+
 
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_play );
+        setContentView( R.layout.track_list );
 
         final ArrayList<Track> tracks = new ArrayList<Track>();
         tracks.add( new Track( "Justin Bieber and Bloodpop", "FRIENDS" ) );
@@ -32,7 +33,7 @@ public class ChartActivity extends AppCompatActivity {
         tracks.add( new Track( "Calvin Harris", "ONE KISS" ) );
         tracks.add( new Track( "Katy Perry", "CHAINED TO THE RHYTHM" ) );
 
-        TrackAdapter adapter = new TrackAdapter( this, tracks );
+        final TrackAdapter adapter = new TrackAdapter( this, tracks );
 
         ListView listView = (ListView) findViewById( R.id.list );
 
@@ -43,12 +44,15 @@ public class ChartActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent( ChartActivity.this, PlayActivity.class );
                 intent.putExtra( "artistName", artist );
-                intent.putExtra( "songName", song );
+                intent.putExtra( "songName", track );
+                startActivity( intent );
             }
         } );
 
     }
 }
+
+
 
 
 
